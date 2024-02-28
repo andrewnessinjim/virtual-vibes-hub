@@ -1,0 +1,8 @@
+{
+    "vsicons.associations.files": [
+        {
+            "icon": "styled",
+            "extensions": [".styled.js"]
+        }
+    ]
+}
