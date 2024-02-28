@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import ServerUserProvider from "@/components/UserProvider";
 import GlobalStyles from "./global.styled";
 import StyledComponentsRegistry from "@/components/StyledComponentsRegistry";
+import ServerThemedRoot from "@/components/ThemedRoot/ServerThemedRoot";
+import { StBody } from "./app.styled";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +15,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <StyledComponentsRegistry>
-      <html lang="en">
-        <body className={inter.className}>
+      <ServerThemedRoot>
+        <StBody className={inter.className}>
           <ServerUserProvider>{children}</ServerUserProvider>
           <GlobalStyles />
-        </body>
-      </html>
+        </StBody>
+      </ServerThemedRoot>
     </StyledComponentsRegistry>
   );
 }
