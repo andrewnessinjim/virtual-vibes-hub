@@ -32,11 +32,17 @@ function ClientThemedRoot({ children, initialTheme }) {
     setCurrentTheme(nextTheme);
     Cookies.set("color-theme", nextTheme, {
       expires: 1000,
-    })
+    });
+  }
+
+  function isDarkMode() {
+    return currentTheme === "dark";
   }
 
   return (
-    <AppThemeContext.Provider value={{ currentTheme, toggleTheme }}>
+    <AppThemeContext.Provider
+      value={{ currentTheme, toggleTheme, isDarkMode: isDarkMode() }}
+    >
       <ThemeProvider theme={themeSettings}>
         <ThemedRoot>{children}</ThemedRoot>
       </ThemeProvider>

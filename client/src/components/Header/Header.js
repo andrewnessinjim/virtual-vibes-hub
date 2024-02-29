@@ -1,11 +1,16 @@
 import React from "react";
 import UserInfo from "./UserInfo";
+import { StActionsContainer, StUserIcon, StWrapper } from "./Header.styled";
+import ThemeToggle from "../ThemeToggle";
 
 function Header() {
   return (
-    <div>
+    <StWrapper>
       <UserInfo />
-    </div>
+      <StActionsContainer>
+        <ThemeToggle />
+      </StActionsContainer>
+    </StWrapper>
   );
 }
 

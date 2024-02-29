@@ -2,12 +2,16 @@
 
 import React from "react";
 import { BrowserUserContext } from "../UserProvider/BrowserUserProvider";
-import { AppThemeContext } from "../ThemedRoot/ClientThemedRoot";
+import { StHello, StWrapper } from "./UserInfo.styled";
 
 function UserInfo() {
-    const user = React.useContext(BrowserUserContext);
-    const {currentTheme} = React.useContext(AppThemeContext);
-    return `Welcome  ${user.username}, Your theme is ${currentTheme}`;
+  const user = React.useContext(BrowserUserContext);
+  return (
+    <StWrapper>
+      <p>Hello</p>
+      <StHello>{user.username}</StHello>
+    </StWrapper>
+  );
 }
 
 export default UserInfo;
