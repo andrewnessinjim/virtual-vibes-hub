@@ -6,7 +6,7 @@ import { AppThemeContext } from "../ThemedRoot/ClientThemedRoot";
 
 function ThemeToggle() {
   const { isDarkMode, toggleTheme } = React.useContext(AppThemeContext);
-  console.log(isDarkMode);
+
   return (
     <StWrapper onClick={toggleTheme}>
       {isDarkMode ? (
