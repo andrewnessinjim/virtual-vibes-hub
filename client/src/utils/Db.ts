@@ -1,6 +1,6 @@
-import { MongoClient } from "mongodb";
+import { Db, MongoClient } from "mongodb";
 
-let db = null;
+let db:Db = null;
 
 function initializeDb() {
     const mongodbURI = "mongodb://wordle-user:wordle-pass@localhost:27017/";
