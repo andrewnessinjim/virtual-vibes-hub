@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import getDb from "./Db";
 
 const rooms = getDb().collection("rooms");
@@ -12,5 +13,5 @@ export async function getAllRooms() {
 }
 
 export async function getRoom(roomId) {
-  return await rooms.findOne({_id: roomId});
+  return await rooms.findOne({_id: new ObjectId(roomId)});
 }
