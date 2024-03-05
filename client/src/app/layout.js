@@ -3,7 +3,8 @@ import ServerUserProvider from "@/components/UserProvider";
 import GlobalStyles from "./global.styled";
 import StyledComponentsRegistry from "@/components/StyledComponentsRegistry";
 import ServerThemedRoot from "@/components/ThemedRoot/ServerThemedRoot";
-import { StBody } from "./app.styled";
+import { StBody, StMain } from "./app.styled";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +17,15 @@ export default function RootLayout({ children }) {
   return (
     <StyledComponentsRegistry>
       <ServerThemedRoot>
-        <StBody className={inter.className}>
-          <ServerUserProvider>{children}</ServerUserProvider>
-          <GlobalStyles />
-        </StBody>
+          <ServerUserProvider>
+            <StBody className={inter.className}>
+              <Header />
+              <StMain>
+                {children}
+              </StMain>
+              <GlobalStyles />
+            </StBody>
+          </ServerUserProvider>
       </ServerThemedRoot>
     </StyledComponentsRegistry>
   );

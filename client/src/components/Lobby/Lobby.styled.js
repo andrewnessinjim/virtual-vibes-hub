@@ -1,13 +1,11 @@
 "use client";
 
 import styled from "styled-components";
-
-import SiteWidthWrapper from "@/components/SiteWidthWrapper";
 import StButton from "../StButton";
 
 export const StWrapper = styled.div`
-    ${SiteWidthWrapper}
     display: flex;
+    max-width: 100%;
     justify-content: center;
     margin-top: 32px;
     flex-direction: column;
@@ -18,6 +16,8 @@ export const StWrapper = styled.div`
 export const StRoomsWrapper = styled.div`
     display: flex;
     gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
 `;
 
 export const StRoomCard = styled.div`
