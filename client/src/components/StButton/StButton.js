@@ -3,10 +3,11 @@
 import React from "react";
 import { StWrapper } from "./StButton.styled";
 import { useTheme } from "styled-components";
+import Link from "next/link";
 
-function StButton({variant, ...delegated}) {
+function StButton({variant, href, ...delegated}) {
   const theme = useTheme();
-
+  const Tag = href ? Link : "button";
   const STYLES = {
     primary: {
       "--background": theme.colors.teal7,
@@ -36,6 +37,8 @@ function StButton({variant, ...delegated}) {
 
   return (
     <StWrapper
+      as={Tag}
+      href={href}
       style={{
         ...STYLES[variant]
       }}

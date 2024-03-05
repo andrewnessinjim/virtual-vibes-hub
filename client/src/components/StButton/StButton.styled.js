@@ -11,4 +11,5 @@ export const StWrapper = styled.button`
   border-radius: var(--borderRadius);
   text-transform: uppercase;
   cursor: pointer;
+  text-decoration: none;
 `;
