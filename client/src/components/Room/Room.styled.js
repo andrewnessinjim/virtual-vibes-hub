@@ -18,3 +18,9 @@ export const StProgressBoard = styled.div`
 export const StTitle = styled.h2`
     text-align: center;
 `;
+
+export const StGridAndKeyboard = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+`;
