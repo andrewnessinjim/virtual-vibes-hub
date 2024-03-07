@@ -13,6 +13,7 @@
     "@radix-ui/colors": "^3.0.0",
     "human-readable-ids": "^1.0.4",
     "js-cookie": "^3.0.5",
+    "lodash": "^4.17.21",
     "mongodb": "6.3",
     "next": "14.1.0",
     "react": "^18",
