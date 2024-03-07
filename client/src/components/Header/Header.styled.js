@@ -2,6 +2,9 @@
 
 import styled from "styled-components";
 import SiteWidthWrapper from "@/components/SiteWidthWrapper";
+import HomeIcon from "../../../public/home-icon";
+import IconStyles from "../IconStyles";
+import Link from "next/link";
 
 export const StWrapper = styled.header`
     ${SiteWidthWrapper}
@@ -12,6 +15,15 @@ export const StWrapper = styled.header`
     justify-content: flex-end;
 `
 
-export const StActionsContainer = styled.div`
+export const StHomeIcon = styled(HomeIcon)`
+    ${IconStyles}
+`
 
+export const StHomeLink = styled(Link)`
+    margin-right: auto;
+`;
+
+export const StActionsContainer = styled.div`
+    display: flex;
+    gap: 24px;
 `;
