@@ -16,7 +16,7 @@ function getBgColor(hint, theme) {
     case null:
       return "none";
     case "incorrect":
-      return theme.colors.sage9;
+      return theme.fixedColors.wordleGridIncorrectCellBg;
     default:
       return CELL_COLORS[hint];
   }

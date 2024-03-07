@@ -15,5 +15,5 @@ export const StLetterCell = styled.div`
   place-content: center;
   font-size: 1.5rem;
   background-color: var(--cellBackgroundColor);
-  color: ${(p) => p.theme.colors.sage12};
+  color: ${(p) => p.theme.fixedColors.wordleGridLetterColor};
 `;

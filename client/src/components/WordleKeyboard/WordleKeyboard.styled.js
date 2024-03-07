@@ -16,11 +16,13 @@ export const StRow = styled.div`
 
 export const StCell = styled.button`
     border: none;
-    color: inherit;
+    color: ${p => p.theme.fixedColors.wordleKeyboardLetterColor};
     width: 40px;
     aspect-ratio: 1/1;
-    background-color: ${p => p.theme.colors.sage4};
+    background-color: ${p => p.theme.fixedColors.wordleKeyboardCellBg};
     display: grid;
     place-content: center;
     cursor: pointer;
+    font-weight: 500;
+    border-radius: 4px;
 `

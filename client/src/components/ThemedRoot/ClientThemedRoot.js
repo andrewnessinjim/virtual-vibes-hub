@@ -9,11 +9,19 @@ import { ThemeProvider } from "styled-components";
 import Cookies from "js-cookie";
 export const AppThemeContext = React.createContext();
 
+const FIXED_COLORS = {
+  wordleGridIncorrectCellBg: sageDark.sage5,
+  wordleGridLetterColor: sageDark.sage12,
+  wordleKeyboardLetterColor: sageDark.sage1,
+  wordleKeyboardCellBg: sageDark.sage11
+}
+
 const lightTheme = {
   colors: {
     ...teal,
     ...sage,
   },
+  fixedColors: FIXED_COLORS
 };
 
 const darkTheme = {
@@ -21,6 +29,7 @@ const darkTheme = {
     ...tealDark,
     ...sageDark,
   },
+  fixedColors: FIXED_COLORS
 };
 
 function ClientThemedRoot({ children, initialTheme }) {
