@@ -7,12 +7,10 @@ const MAX_GUESSES_ALLOWED = 6;
 
 const STYLES = {
   mini: {
-    "--gridPadding": "8px",
     "--cellSize": "24px",
     "--cellGap": "2px",
   },
   full: {
-    "--gridPadding": "16px",
     "--cellSize": "64px",
     "--cellGap": "4px",
   },

@@ -13,6 +13,7 @@ export const StGameBoard = styled.div`
 
 export const StProgressBoard = styled.div`
     display: flex;
+    gap: 16px;
 `
 
 export const StTitle = styled.h2`
@@ -21,6 +22,7 @@ export const StTitle = styled.h2`
 
 export const StGridAndKeyboard = styled.div`
     display: flex;
+    gap: 32px;
     align-items: center;
     flex-direction: column;
 `;
