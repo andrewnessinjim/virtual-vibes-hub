@@ -6,6 +6,7 @@ import Spacer from "../Spacer";
 import { FULL_GAME_ONLY_HINTS, PARTIAL_GAME, PARTIAL_GAME_ONLY_HINTS } from "./testData";
 import WordleKeyboard from "../WordleKeyboard";
 import PlayerGridProgress from "../PlayerGridProgress";
+import GameFeeds from "../GameFeeds";
 
 async function Room({ roomId }) {
   const roomData = await getRoom(roomId);
@@ -24,6 +25,7 @@ async function Room({ roomId }) {
             <PlayerGridProgress guesses={FULL_GAME_ONLY_HINTS} variant={"mini"} playerName="Papipa"/>
             <PlayerGridProgress guesses={PARTIAL_GAME_ONLY_HINTS} variant={"mini"} playerName="Rashumi"/>
           </StGridProgress>
+          <GameFeeds />
         </StProgressBoard>
       </StGameBoard>
     </StWrapper>
