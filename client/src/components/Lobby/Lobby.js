@@ -6,14 +6,15 @@ import {
   StRoomsWrapper,
   StWrapper,
 } from "./Lobby.styled";
-import HeroButton from "../StButton/HeroButton";
 import { getAllRooms } from "@/utils/roomsDb";
+import CreateRoomButton from "./CreateRoomButton";
 
 async function Lobby() {
   const data = await getAllRooms();
+
   return (
     <StWrapper>
-      <HeroButton>Create Room</HeroButton>
+      <CreateRoomButton/>
       {data && (
         <StRoomsWrapper>
           {data.map((roomData) => (
