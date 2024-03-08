@@ -2,7 +2,6 @@ import React from "react";
 import UserInfo from "./UserInfo";
 import { StActionsContainer, StHomeIcon, StHomeLink, StUserIcon, StWrapper } from "./Header.styled";
 import ThemeToggle from "../ThemeToggle";
-import Link from "next/link";
 
 function Header() {
   return (
