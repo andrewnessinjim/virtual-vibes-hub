@@ -13,7 +13,13 @@ async function Lobby() {
   const data = await getAllRooms();
 
   return (
-    <StWrapper>
+    <StWrapper
+      initial={{
+        opacity: 0
+      }}
+      animate={{
+        opacity: 1
+      }}>
       <CreateRoomButton/>
       {data && (
         <StRoomsWrapper>

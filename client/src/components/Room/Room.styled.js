@@ -1,8 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
-export const StWrapper = styled.main``;
+export const StWrapper = styled(motion.main)``;
 
 export const StTitle = styled.h2`
   text-align: center;

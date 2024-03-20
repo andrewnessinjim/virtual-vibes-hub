@@ -2,8 +2,9 @@
 
 import styled from "styled-components";
 import StButton from "../StButton";
+import { motion } from "framer-motion";
 
-export const StWrapper = styled.div`
+export const StWrapper = styled(motion.div)`
     display: flex;
     max-width: 100%;
     justify-content: center;

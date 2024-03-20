@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
+    "framer-motion": "^11.0.15",
     "human-readable-ids": "^1.0.4",
     "js-cookie": "^3.0.5",
     "lodash": "^4.17.21",
