@@ -2,8 +2,9 @@
 
 import styled from "styled-components"
 import StButton from "@/components/StButton";
+import { motion } from "framer-motion";
 
-export const StRoomCard = styled.div`
+export const StRoomCard = styled(motion.div)`
     background: ${p => p.theme.colors.sage11};
     width: 160px;
     height: 160px;
