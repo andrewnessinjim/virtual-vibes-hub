@@ -9,7 +9,12 @@ export async function createNewRoom(newRoom) {
 }
 
 export async function getAllRooms() {
-    return await rooms.find().toArray();
+    const roomsData = await rooms.find().toArray();
+    return roomsData.map(room => {
+      room._id = room._id.toString();
+      return room;
+    }
+    )
 }
 
 export async function getRoom(roomId) {

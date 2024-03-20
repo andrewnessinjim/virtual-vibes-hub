@@ -2,25 +2,38 @@
 
 import { useRouter } from "next/navigation";
 import HeroButton from "../StButton/HeroButton";
+import { useContext } from "react";
+import { SocketContext } from "../SocketContextProvider";
+import Spinner from "../../../public/spinner";
+import styled from "styled-components";
 
 const ENDPOINT = "/api/rooms/";
 
+const CreatRoomButton = styled(HeroButton)`
+  width: 300px;
+  height: 72px;
+`;
 function CreateRoomButton() {
-    const router = useRouter();
+  const router = useRouter();
+  const { socket, socketLoading } = useContext(SocketContext);
 
   async function onCreateRoom(event) {
     event.preventDefault();
 
-    console.log("Let's create a room!");
-    const response =  await fetch(ENDPOINT, {
-        method: "POST"
+    socket.emit("create-room" , roomResponse => {
+      if(roomResponse._id){
+        router.push(`/rooms/${roomResponse._id}`);
+      }
     });
-    const json = await response.json();
-    console.log(json);
-    router.push(`/rooms/${json._id}`);
   }
 
-  return <HeroButton onClick={onCreateRoom}>Create Room</HeroButton>;
+  return (
+    <CreatRoomButton onClick={onCreateRoom}>
+      {socketLoading ?
+      <Spinner /> : "Create Room"
+}
+    </CreatRoomButton>
+  );
 }
 
 export default CreateRoomButton;

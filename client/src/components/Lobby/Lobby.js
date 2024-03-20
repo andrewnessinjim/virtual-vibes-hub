@@ -1,41 +1,18 @@
 import React from "react";
-import {
-  StJoinButton,
-  StRoomCard,
-  StRoomTitle,
-  StRoomsWrapper,
-  StWrapper,
-} from "./Lobby.styled";
+import { StWrapper } from "./Lobby.styled";
 import { getAllRooms } from "../../../../server/db/roomsDb";
 import CreateRoomButton from "./CreateRoomButton";
+import RoomsGrid from "./RoomsGrid";
+
+export const dynamic = "force-dynamic";
 
 async function Lobby() {
-  const data = await getAllRooms();
+  const initialRooms = await getAllRooms();
 
   return (
-    <StWrapper
-      initial={{
-        opacity: 0
-      }}
-      animate={{
-        opacity: 1
-      }}>
-      <CreateRoomButton/>
-      {data && (
-        <StRoomsWrapper>
-          {data.map((roomData) => (
-            <StRoomCard key={roomData._id}>
-              <StRoomTitle>{roomData.roomName}</StRoomTitle>
-              <StJoinButton
-                variant="miniAction"
-                href={`/rooms/${roomData._id}`}
-              >
-                Join
-              </StJoinButton>
-            </StRoomCard>
-          ))}
-        </StRoomsWrapper>
-      )}
+    <StWrapper>
+      <CreateRoomButton />
+      <RoomsGrid initialRooms={initialRooms} />
     </StWrapper>
   );
 }
