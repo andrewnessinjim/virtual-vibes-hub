@@ -5,6 +5,7 @@ import StyledComponentsRegistry from "@/components/StyledComponentsRegistry";
 import ServerThemedRoot from "@/components/ThemedRoot/ServerThemedRoot";
 import { StBody, StMain } from "./app.styled";
 import Header from "@/components/Header";
+import SocketContextProvider from "@/components/SocketContextProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,15 +18,15 @@ export default function RootLayout({ children }) {
   return (
     <StyledComponentsRegistry>
       <ServerThemedRoot>
-          <ServerUserProvider>
+        <ServerUserProvider>
+          <SocketContextProvider>
             <StBody className={inter.className}>
               <Header />
-              <StMain>
-                {children}
-              </StMain>
+              <StMain>{children}</StMain>
               <GlobalStyles />
             </StBody>
-          </ServerUserProvider>
+          </SocketContextProvider>
+        </ServerUserProvider>
       </ServerThemedRoot>
     </StyledComponentsRegistry>
   );

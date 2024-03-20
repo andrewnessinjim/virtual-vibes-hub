@@ -1,4 +1,4 @@
-const { default: getDb } = require("./Db");
+import getDb from "./Db";
 
 const db = getDb();
 

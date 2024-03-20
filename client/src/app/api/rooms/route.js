@@ -1,5 +1,5 @@
-import { createNewRoom, getAllRooms } from "@/utils/roomsDb";
-import { getNextSequence } from "@/utils/sequenceDb";
+import { createNewRoom, getAllRooms } from "../../../../../server/db/roomsDb";
+import { getNextSequence } from "../../../../../server/db/sequenceDb";
 import { cookies } from "next/headers"
 
 export async function GET() {

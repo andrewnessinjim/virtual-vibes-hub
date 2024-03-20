@@ -6,7 +6,7 @@ import {
   StRoomsWrapper,
   StWrapper,
 } from "./Lobby.styled";
-import { getAllRooms } from "@/utils/roomsDb";
+import { getAllRooms } from "../../../../server/db/roomsDb";
 import CreateRoomButton from "./CreateRoomButton";
 
 async function Lobby() {

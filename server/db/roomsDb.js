@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import getDb from "./Db";
+import getDb from "./Db.js";
 
 const rooms = getDb().collection("rooms");
 

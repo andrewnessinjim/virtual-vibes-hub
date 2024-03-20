@@ -1,4 +1,4 @@
-import { getRoom } from "@/utils/roomsDb";
+import { getRoom } from "../../../../server/db/roomsDb";
 import React from "react";
 import { StGameBoard, StGridProgress, StPlayBoard, StProgressBoard, StTitle, StWrapper } from "./Room.styled";
 import WordleGrid from "@/components/WordleGrid";

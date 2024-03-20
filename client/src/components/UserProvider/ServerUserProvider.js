@@ -2,7 +2,7 @@ import { cookies } from 'next/headers';
 import React from 'react';
 import BrowserUserProvider from './BrowserUserProvider';
 import {hri} from "human-readable-ids";
-import { createNewUser, findUser } from '@/utils/userDb';
+import { createNewUser, findUser } from '../../../../server/db/userDb';
 
 async function ServerUserProvider({children}) {  
   const savedUUID = cookies().get("uuid");
