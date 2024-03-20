@@ -13,15 +13,37 @@ function SocketContextProvider({ children }) {
   React.useEffect(() => {
     const nextSocket = io("ws://localhost:3001", {
       auth: {
-        uuid: user.uuid
-      }
+        uuid: user.uuid,
+      },
     });
-
     setSocket(nextSocket);
-    setSocketLoading(false);
 
-    return ()=> nextSocket.disconnect();
-  }, [])
+    return () => nextSocket.disconnect();
+  }, []);
+
+  React.useEffect(() => {
+    if (socket) {
+      function markSocketLoaded() {
+        setSocketLoading(false);
+      }
+      socket.on("connect", markSocketLoaded);
+
+      return () => socket.off("connect", markSocketLoaded);
+    }
+  });
+
+  React.useEffect(() => {
+    if (socket) {
+      function markSocketLoading() {
+        setSocketLoading(true);
+      }
+
+      socket.on("disconnect", markSocketLoading);
+
+      return () => socket.off("disconnect", markSocketLoading);
+    }
+  });
+
   return (
     <SocketContext.Provider value={{ socket, socketLoading }}>
       {children}
