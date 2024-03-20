@@ -14,7 +14,6 @@ function RoomsGrid({initialRooms}) {
       function updateRooms(fetchedRooms) {
         setRooms(fetchedRooms);
       }
-      console.log("Emitting fetch-rooms")
       socket.emit("fetch-rooms", updateRooms);
     }
   }, [socket]);
@@ -23,12 +22,14 @@ function RoomsGrid({initialRooms}) {
   React.useEffect(() => {
     if (socket) {
       function addNewRoom(newRoom) {
-        const nextRooms = [...rooms];
-        nextRooms.push(newRoom);
-        setRooms(nextRooms);
+        setRooms(currentRooms => {
+          const nextRooms = [...currentRooms];
+          nextRooms.push(newRoom);
+          return nextRooms;
+        })
       }
-      socket.on("room-created", addNewRoom);
 
+      socket.on("room-created", addNewRoom);
       return () => socket.off("room-created", addNewRoom);
     }
   }, [socket]);
