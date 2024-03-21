@@ -8,30 +8,6 @@ function GameFeeds() {
     {
       player: "Jimmy",
       event: "created the room",
-    },
-    {
-      player: "Papipa",
-      event: "joined the room",
-    },
-    {
-      player: "Rashumi",
-      event: "joined the room",
-    },
-    {
-      player: "Jimmy",
-      event: "created the room",
-    },
-    {
-      player: "Papipa",
-      event: "joined the room",
-    },
-    {
-      player: "Rashumi",
-      event: "joined the room",
-    },
-    {
-      player: "Jimmy",
-      event: "created the room",
     }
   ]);
   return (

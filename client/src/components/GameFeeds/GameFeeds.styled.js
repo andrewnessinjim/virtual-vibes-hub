@@ -4,10 +4,9 @@ import styled from "styled-components";
 
 export const StWrapper = styled.ol`
     margin: 0;
-    padding: 0;
+    padding: 16px;
     list-style: none;
-    height: 300px;
-    margin-top: 32px;
+    height: 200px;
     color: ${p => p.theme.colors.teal12};
     overflow-y: auto;
 `;

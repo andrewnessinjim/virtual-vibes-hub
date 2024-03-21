@@ -34,7 +34,7 @@ async function Room({ roomId }) {
       <Spacer size={24} />
       <StGameBoard>
         <StPlayBoard>
-          <WordleGrid guesses={PARTIAL_GAME} variant="full" />
+          <WordleGrid guesses={[]} variant="full" />
           <WordleKeyboard />
         </StPlayBoard>
         <StDashboard>

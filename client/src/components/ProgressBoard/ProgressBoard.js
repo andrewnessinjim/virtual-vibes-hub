@@ -6,16 +6,12 @@ import { FULL_GAME_ONLY_HINTS, PARTIAL_GAME_ONLY_HINTS } from "../Room/testData"
 function ProgressBoard() {
   return (
     <StWrapper>
-      <PlayerGridProgress
+      {/* <PlayerGridProgress
         guesses={FULL_GAME_ONLY_HINTS}
         variant={"mini"}
         playerName="Papipa"
-      />
-      <PlayerGridProgress
-        guesses={PARTIAL_GAME_ONLY_HINTS}
-        variant={"mini"}
-        playerName="Rashumi"
-      />
+      />  */}
+      Waiting for players
     </StWrapper>
   );
 }

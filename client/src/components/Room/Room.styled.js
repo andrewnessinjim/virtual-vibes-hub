@@ -28,4 +28,5 @@ export const StDashboard = styled.div`
   border: 2px dashed ${(p) => p.theme.colors.sage4};
   padding: 16px;
   width: 40%;
+  gap:16px;
 `;
