@@ -1,23 +1,17 @@
 "use client";
 
 import React from "react";
-import { SocketContext } from "@/components/SocketContextProvider";
 import RoomPreview from "./RoomPreview";
 import styled from "styled-components";
-import useSocketOn from "@/hooks/sockets";
+import { useSocketAck, useSocketOn } from "@/hooks/sockets";
 
 function RoomsGrid({ initialRooms }) {
-  const { socket } = React.useContext(SocketContext);
   const [rooms, setRooms] = React.useState(initialRooms);
 
-  React.useEffect(() => {
-    if (socket) {
-      function updateRooms(fetchedRooms) {
-        setRooms(fetchedRooms);
-      }
-      socket.emit("fetch-rooms", updateRooms);
-    }
-  }, [socket]);
+  function updateRooms(fetchedRooms) {
+    setRooms(fetchedRooms);
+  }
+  useSocketAck("fetch-rooms", updateRooms);
 
   function addNewRoom(newRoom) {
     newRoom.introAnimation = true;
@@ -27,7 +21,6 @@ function RoomsGrid({ initialRooms }) {
       return nextRooms;
     });
   }
-
   useSocketOn("room-created", addNewRoom);
 
   return (
