@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { SocketContext } from "../SocketContextProvider";
+import { SocketContext } from "@/components/SocketContextProvider";
 import RoomPreview from "./RoomPreview";
 import styled from "styled-components";
+import useSocketOn from "@/hooks/sockets";
 
 function RoomsGrid({ initialRooms }) {
   const { socket } = React.useContext(SocketContext);
@@ -18,21 +19,16 @@ function RoomsGrid({ initialRooms }) {
     }
   }, [socket]);
 
-  React.useEffect(() => {
-    if (socket) {
-      function addNewRoom(newRoom) {
-        newRoom.introAnimation = true;
-        setRooms((currentRooms) => {
-          const nextRooms = [...currentRooms];
-          nextRooms.push(newRoom);
-          return nextRooms;
-        });
-      }
+  function addNewRoom(newRoom) {
+    newRoom.introAnimation = true;
+    setRooms((currentRooms) => {
+      const nextRooms = [...currentRooms];
+      nextRooms.push(newRoom);
+      return nextRooms;
+    });
+  }
 
-      socket.on("room-created", addNewRoom);
-      return () => socket.off("room-created", addNewRoom);
-    }
-  }, [socket]);
+  useSocketOn("room-created", addNewRoom);
 
   return (
     <StWrapper>

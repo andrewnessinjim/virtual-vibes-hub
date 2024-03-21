@@ -21,6 +21,8 @@ function SocketContextProvider({ children }) {
     return () => nextSocket.disconnect();
   }, []);
 
+  //useSocketOn is not used here because context is available only 
+  //for this component's children
   React.useEffect(() => {
     if (socket) {
       function markSocketLoaded() {
