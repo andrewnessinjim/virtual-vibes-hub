@@ -2,9 +2,8 @@ import { getRoom } from "../../../../server/db/roomsDb";
 import React from "react";
 import {
   StGameBoard,
-  StGridProgress,
   StPlayBoard,
-  StProgressBoard,
+  StDashboard,
   StTitle,
   StWrapper,
 } from "./Room.styled";
@@ -16,8 +15,8 @@ import {
   PARTIAL_GAME_ONLY_HINTS,
 } from "./testData";
 import WordleKeyboard from "../WordleKeyboard";
-import PlayerGridProgress from "../PlayerGridProgress";
 import GameFeeds from "../GameFeeds";
+import ProgressBoard from "../ProgressBoard";
 
 async function Room({ roomId }) {
   const roomData = await getRoom(roomId);
@@ -32,27 +31,16 @@ async function Room({ roomId }) {
       }}
     >
       <StTitle>{roomData.roomName}</StTitle>
-      <Spacer size={48} />
+      <Spacer size={24} />
       <StGameBoard>
         <StPlayBoard>
           <WordleGrid guesses={PARTIAL_GAME} variant="full" />
           <WordleKeyboard />
         </StPlayBoard>
-        <StProgressBoard>
-          <StGridProgress>
-            <PlayerGridProgress
-              guesses={FULL_GAME_ONLY_HINTS}
-              variant={"mini"}
-              playerName="Papipa"
-            />
-            <PlayerGridProgress
-              guesses={PARTIAL_GAME_ONLY_HINTS}
-              variant={"mini"}
-              playerName="Rashumi"
-            />
-          </StGridProgress>
+        <StDashboard>
+          <ProgressBoard/>
           <GameFeeds />
-        </StProgressBoard>
+        </StDashboard>
       </StGameBoard>
     </StWrapper>
   );

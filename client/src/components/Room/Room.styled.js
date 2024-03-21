@@ -22,17 +22,10 @@ export const StPlayBoard = styled.div`
   width: 60%;
 `;
 
-export const StProgressBoard = styled.div`
+export const StDashboard = styled.div`
   display: flex;
   flex-direction: column;
   border: 2px dashed ${(p) => p.theme.colors.sage4};
   padding: 16px;
   width: 40%;
-`;
-
-export const StGridProgress = styled.div`
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content:center;
 `;
