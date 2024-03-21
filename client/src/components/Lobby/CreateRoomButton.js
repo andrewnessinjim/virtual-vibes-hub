@@ -7,8 +7,6 @@ import { SocketContext } from "../SocketContextProvider";
 import Spinner from "../../../public/spinner";
 import styled from "styled-components";
 
-const ENDPOINT = "/api/rooms/";
-
 const CreatRoomButton = styled(HeroButton)`
   width: 300px;
   height: 72px;
