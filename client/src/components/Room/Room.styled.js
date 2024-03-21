@@ -26,7 +26,8 @@ export const StDashboard = styled.div`
   display: flex;
   flex-direction: column;
   border: 2px dashed ${(p) => p.theme.colors.sage4};
-  padding: 16px;
   width: 40%;
   gap:16px;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 `;
