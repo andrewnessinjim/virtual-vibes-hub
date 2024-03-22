@@ -20,3 +20,7 @@ export function useSocketAck(...args) {
     }
   }, [socket]);
 }
+
+export function useSocketEmit(...args){
+  useSocketAck(...args);
+}

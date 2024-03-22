@@ -42,6 +42,12 @@ io.on("connection", (socket) => {
     callback(await getAllRooms());
   });
 
+  socket.on("join-room", (data, callback) => {
+    socket.join(data.roomId)
+    console.log(`${data.user.username} joined room ${data.roomId}`);
+    callback({success: true});
+  })
+
   socket.on("disconnect", (obj) => {
     console.log(obj);
     console.log("User disconnected");

@@ -9,11 +9,6 @@ export const StTitle = styled.h2`
   text-align: center;
 `;
 
-export const StGameBoard = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
 export const StPlayBoard = styled.div`
   display: flex;
   gap: 32px;
